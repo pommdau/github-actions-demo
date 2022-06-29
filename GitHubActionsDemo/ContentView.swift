@@ -6,11 +6,19 @@
 //
 
 import SwiftUI
+import Algorithms
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world_2!")
-            .padding()
+        Button {
+            let numbers = [10, 20, 30, 40]
+            for combo in numbers.combinations(ofCount: 2) {
+                print(combo)
+            }
+        } label: {
+            Text("Demo Button")
+        }
+
     }
 }
 

@@ -14,6 +14,7 @@
 		DA009D8B28644C97009ED834 /* GitHubActionsDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA009D8A28644C97009ED834 /* GitHubActionsDemoTests.swift */; };
 		DA009D9528644C97009ED834 /* GitHubActionsDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA009D9428644C97009ED834 /* GitHubActionsDemoUITests.swift */; };
 		DA009D9728644C97009ED834 /* GitHubActionsDemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA009D9628644C97009ED834 /* GitHubActionsDemoUITestsLaunchTests.swift */; };
+		DA9EF999286C4C8E0021B39D /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = DA9EF998286C4C8E0021B39D /* Algorithms */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA9EF999286C4C8E0021B39D /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = GitHubActionsDemo;
+			packageProductDependencies = (
+				DA9EF998286C4C8E0021B39D /* Algorithms */,
+			);
 			productName = GitHubActionsDemo;
 			productReference = DA009D7628644C96009ED834 /* GitHubActionsDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = DA009D6D28644C96009ED834;
+			packageReferences = (
+				DA9EF997286C4C8E0021B39D /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+			);
 			productRefGroup = DA009D7728644C96009ED834 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -583,6 +591,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DA9EF997286C4C8E0021B39D /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DA9EF998286C4C8E0021B39D /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DA9EF997286C4C8E0021B39D /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DA009D6E28644C96009ED834 /* Project object */;
 }
