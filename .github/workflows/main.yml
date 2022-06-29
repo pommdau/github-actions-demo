@@ -2,6 +2,7 @@ name: CI  # ワークフローの名前
 
 on:  # トリガの設定
 # トリガはジョブで共有されるので、トリガを分ける場合はymlファイルを分ける
+  workflow_dispatch:
   push:
     branches:
       - main
