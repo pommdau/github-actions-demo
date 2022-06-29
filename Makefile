@@ -1,10 +1,17 @@
 # 変数
 PRODUCT_NAME := GitHubActionsDemo
-WORKSPACE_NAME := ${PRODUCT_NAME}.xcodeproj
+PROJECT_NAME := ${PRODUCT_NAME}.xcodeproj
 SCHEME_NAME := ${PRODUCT_NAME}
+UI_TESTS_TARGET_NAME := ${PRODUCT_NAME}UITests
 
 TEST_SDK := iphonesimulator  # 最新のSDK
+TEST_CONFIGURATION := Debug
 
+# 下記のリストを取得したいがどうやるのか…？
+TEST_PLATFORM := iOS Simulator
+TEST_DEVICE ?= iPhone 13 Pro Max
+TEST_OS ?= 15.5
+TEST_DESTINATION := 'platform=${TEST_PLATFORM},name=${TEST_DEVICE},OS=${TEST_OS}'
 
 .PHONY: ikeh
 ikeh:
@@ -16,8 +23,22 @@ open: # ワークスペースをXcodeで開く
 	
 .PHONY: build-debug
 build-debug: # デバッグビルド
-	xcodebuild \
-	-scheme GitHubActionsDemo \
-	-sdk iphonesimulator \
-	-configuration Debug \
-	build
+	set -o pipefail \
+&& xcodebuild \
+-project ${PROJECT_NAME} \
+-sdk ${TEST_SDK} \
+-configuration ${TEST_CONFIGURATION} \
+-scheme ${SCHEME_NAME} \
+build
+
+.PHONY: test
+test: # 単体テスト
+	set -o pipefail \
+&& xcodebuild \
+-sdk ${TEST_SDK} \
+-configuration ${TEST_CONFIGURATION} \
+-project ${PROJECT_NAME} \
+-scheme ${SCHEME_NAME} \
+-destination ${TEST_DESTINATION} \
+-skip-testing:${UI_TESTS_TARGET_NAME} \
+clean test
