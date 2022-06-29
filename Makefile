@@ -10,7 +10,7 @@ TEST_CONFIGURATION := Debug
 # 下記のリストを取得したいがどうやるのか…？
 TEST_PLATFORM := iOS Simulator
 TEST_DEVICE ?= iPhone 11 Pro Max
-TEST_OS ?= 15.5
+TEST_OS ?= 15.2
 TEST_DESTINATION := 'platform=${TEST_PLATFORM},name=${TEST_DEVICE},OS=${TEST_OS}'
 
 .PHONY: ikeh
