@@ -26,6 +26,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3  # uses: 定義されているアクションを使える
     
+    - name: Xcode build
+      run: |
+        xcodebuild \
+        -scheme Swift-github-actions \
+        -sdk iphonesimulator \
+        -configuration Debug \
+        build
+    
 #     # プロジェクトファイルの生成、CocoaPodsで管理しているライブラリのインストール
 #     - name: Generate Xcode project and install Pods
 #       run: make generate-xcodeproj
