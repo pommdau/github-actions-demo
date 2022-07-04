@@ -28,7 +28,7 @@ build-debug: # デバッグビルド
 -sdk ${TEST_SDK} \
 -configuration ${TEST_CONFIGURATION} \
 -scheme ${SCHEME_NAME} \
--clonedSourcePackagesDirPath SwiftPMCache \
+-clonedSourcePackagesDirPath _SwiftPMCache \
 build
 
 .PHONY: test
