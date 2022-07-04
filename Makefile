@@ -28,7 +28,7 @@ build-debug: # デバッグビルド
 -sdk ${TEST_SDK} \
 -configuration ${TEST_CONFIGURATION} \
 -scheme ${SCHEME_NAME} \
--clonedSourcePackagesDirPath _SwiftPMCache \
+-clonedSourcePackagesDirPath SwiftPMCache \
 build
 
 .PHONY: test
@@ -39,6 +39,7 @@ test: # 単体テスト
 -configuration ${TEST_CONFIGURATION} \
 -project ${PROJECT_NAME} \
 -scheme ${SCHEME_NAME} \
+-clonedSourcePackagesDirPath SwiftPMCache \
 -destination ${TEST_DESTINATION} \
 -skip-testing:${UI_TESTS_TARGET_NAME} \
 clean test
