@@ -27,6 +27,14 @@ jobs:
     steps:
     - uses: actions/checkout@v3  # uses: 定義されているアクションを使える
     
+    - name: Chache SwiftPM
+      uses: actions/cache@v3
+      with:
+        path: .build
+        key: ${{ runner.os }}-spm-${{ hashFiles('**/Package.resolved') }}
+        restore-keys: |
+          ${{ runner.os }}-spm-
+
     # ビルド
     - name: Xcode build
       run: make build-debug
