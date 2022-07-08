@@ -3,19 +3,19 @@ name: CI  # ワークフローの名前
 on:  # トリガの設定
 # トリガはジョブで共有されるので、トリガを分ける場合はymlファイルを分ける
   workflow_dispatch:
-  push:
-    branches:
-      - main
-      - develop
-    paths-ignore:  # 無視するファイルを設定できる
-      - Docs/**
-      - README.md
-  pull_request:
-    branches: 
-      - develop
-    paths-ignore:
-      - Docs/**
-      - README.md
+#   push:
+#     branches:
+#       - main
+#       - develop
+#     paths-ignore:  # 無視するファイルを設定できる
+#       - Docs/**
+#       - README.md
+#   pull_request:
+#     branches: 
+#       - develop
+#     paths-ignore:
+#       - Docs/**
+#       - README.md
 
 env:  # 環境変数の指定
   DEVELOPER_DIR: /Applications/Xcode.app/Contents/Developer
