@@ -10,13 +10,24 @@ import Algorithms
 
 struct ContentView: View {
     var body: some View {
-        Button {
-            let numbers = [10, 20, 30, 40]
-            for combo in numbers.combinations(ofCount: 2) {
-                print(combo)
+       
+        VStack {
+            Button {
+                let numbers = [10, 20, 30, 40]
+                for combo in numbers.combinations(ofCount: 2) {
+                    print(combo)
+                }
+            } label: {
+                Text("Demo Button")
             }
-        } label: {
-            Text("Demo Button")
+            
+            Button {
+                for i in 0...3 {
+                    print(i)
+                }
+            } label: {
+                Text("Demo Button2")
+            }
         }
 
     }
